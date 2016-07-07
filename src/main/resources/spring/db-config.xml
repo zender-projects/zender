@@ -12,7 +12,8 @@
                             http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
                             
     <context:component-scan base-package="com.zender.dao"></context:component-scan>   
-    <context:component-scan base-package="com.zender.service"></context:component-scan>      
+    <context:component-scan base-package="com.zender.service"></context:component-scan>
+    <context:component-scan base-package="com.zender.task"></context:component-scan>       
     <!-- 加载数据库配置文件 -->
     <context:property-placeholder location="classpath:db.properties"/>
     

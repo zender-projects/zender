@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Home</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Curriculum Vitae Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		
+		<!-- css -->
+	    <link href="http://localhost:8080/source/zender/css/resume/bootstrap.css" rel='stylesheet' type='text/css' />
+	    <link href="http://localhost:8080/source/zender/css/resume/dashboard.css" rel="stylesheet">
+	    <link href="http://localhost:8080/source/zender/css/resume/style.css" rel='stylesheet' type='text/css' />
+		<link href="http://localhost:8080/source/zender/css/resume/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href='http://fonts.useso.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.useso.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+		<!-- js -->
+		<script src="http://localhost:8080/source/zender/js/common/jquery/jquery.min.js"></script>
+		<script src="http://localhost:8080/source/zender/js/common/angular/angular.js"></script>
+	    <script src="http://localhost:8080/source/zender/js/resume/js/jquery.magnific-popup.js"></script>
+	    
+	    <!-- custom js -->
+	    <script src="http://localhost:8080/zender/js/app/resume.js"></script>
+	    <script src="http://localhost:8080/zender/js/service/http_service.js"></script>
+	    <script src="http://localhost:8080/zender/js/directive/resume_directive.js"></script>
+	    <script src="http://localhost:8080/zender/js/controller/resume_controller.js"></script>
+	    
+	    <script>
+						$(document).ready(function() {
+							$('.popup-with-zoom-anim').magnificPopup({
+								type: 'inline',
+								fixedContentPos: false,
+								fixedBgPos: true,
+								overflowY: 'auto',
+								closeBtnInside: true,
+								preloader: false,
+								midClick: true,
+								removalDelay: 300,
+								mainClass: 'my-mfp-zoom-in'
+							});
+						});
+		 </script>
+		 <!-- <script type="application/x-javascript"> 
+		     addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+		 </script> -->
+		 <style type="text/css">
+		     body{font-family:Arial Black, Gadget, sans-serif;color:#000000;background-color:#FFFFFF}
+		 </style>
+	</head>
+<body ng-app="resume">
+<!-- header -->
+<div class="col-sm-3 col-md-2 sidebar" ng-controller="BasicInfoController">
+		 <div class="sidebar_top">
+			 <h1>{{basicInfo.name}}</h1> 
+			 <img src="http://localhost:8080/source/zender/imgs/resume/myself.jpg" alt=""/>
+		 </div>
+		<div class="details">
+			 <h3>联系电话</h3>
+			 <p>{{basicInfo.telephone}}</p>  	 
+			 <h3>电子邮箱</h3>
+			 <p><a href="mailto@example.com">{{basicInfo.email}}</a></p>
+			 <address>
+			 <h3>地址</h3>
+			 <span>{{basicInfo.address}}</span>
+			 </address>
+			 
+		</div>
+		<div class="clearfix"></div>
+</div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	 <div class="content">
+		 <div class="details_header">
+			 <ul>
+				 <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
+				 <li><a href="{{contactUrl}}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>联系我</a></li>
+				 <li><a href="{{mapUrl}}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>地图</a></li>
+				 <li><a href="{{downloadUrl}}"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>下载简历</a></li>
+				 <div id="small-dialog" class="mfp-hide">
+					 <img src="" alt=""/>
+				 </div>
+				 
+			 </ul>
+		 </div>
+		 <div class="company" ng-controller="EmploymentController">
+			 <div title desc="工作经历"></div>
+			 <div class="company_details" ng-repeat="employment in employments">
+			     <h4>{{employment.companyName}}<span>{{employment.startTime}} - {{employment.endTime}}</span></h4>
+				 <p>岗位描述：{{employment.site}}</p>
+				 <p>工作描述：{{employment.workDesc}}</p>
+			 </div>
+		 </div>
+		 <div class="company">
+			 <div title desc="职业技能"></div>
+			 <div class="company_details" ng-controller="SkillController">
+						 <p ng-repeat="skill in skills">{{$index + 1}}.{{skill.sdesc}}</p>
+				 <!-- <div class="clearfix"></div> -->
+			 </div>
+		 </div>
+         <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >免费网站模板</a></div>
+		 <div class="education" ng-controller="EducationController">
+			 <div title desc="教育背景"></div>
+			 <div class="education_details" ng-repeat="education in educations">
+				 <h4>{{education.school}}<span>{{education.startTime}} - {{education.endTime}}</span></h4>
+				 <h6>{{education.major}}</h6>
+				 <p class="cmpny1">在大学期间主修软件工程专业，学习基本的计算机理论知识及编程知识，大四开始在长春本地软件企业实习</p>
+			 </div>
+		 </div>
+		 <!-- <div class="copywrite">
+			 <p>Copyright &copy; 2016.Zender All rights reserved.</p>
+		 </div> -->
+	 </div>
+</div>
+</body>
+</html>

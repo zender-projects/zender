@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Contact</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Curriculum Vitae Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		
+		<!-- css -->
+	    <link href="http://localhost:8080/source/zender/css/resume/bootstrap.css" rel='stylesheet' type='text/css' />
+	    <link href="http://localhost:8080/source/zender/css/resume/dashboard.css" rel="stylesheet">
+	    <link href="http://localhost:8080/source/zender/css/resume/style.css" rel='stylesheet' type='text/css' />
+		<link href="http://localhost:8080/source/zender/css/resume/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+		<link href='http://fonts.useso.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.useso.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+		<!-- js -->
+		<script src="http://localhost:8080/source/zender/js/common/jquery/jquery.min.js"></script>
+		<script src="http://localhost:8080/source/zender/js/common/angular/angular.js"></script>
+	    <script src="http://localhost:8080/source/zender/js/resume/js/jquery.magnific-popup.js"></script>
+	    
+	    <!-- custom js -->
+	    <script src="http://localhost:8080/zender/js/app/resume.js"></script>
+	    <script src="http://localhost:8080/zender/js/service/http_service.js"></script>
+	    <script src="http://localhost:8080/zender/js/directive/resume_directive.js"></script>
+	    <script src="http://localhost:8080/zender/js/controller/resume_controller.js"></script>
+	    
+	    <script>
+						$(document).ready(function() {
+							$('.popup-with-zoom-anim').magnificPopup({
+								type: 'inline',
+								fixedContentPos: false,
+								fixedBgPos: true,
+								overflowY: 'auto',
+								closeBtnInside: true,
+								preloader: false,
+								midClick: true,
+								removalDelay: 300,
+								mainClass: 'my-mfp-zoom-in'
+							});
+						});
+		 </script>
+		 <!-- <script type="application/x-javascript"> 
+		     addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+		 </script> -->
+		 <style type="text/css">
+		     body{font-family:Arial Black, Gadget, sans-serif;color:#000000;background-color:#FFFFFF}
+		 </style>
+	</head>
+<body ng-app="resume">
+<!-- header -->
+<div class="col-sm-3 col-md-2 sidebar" ng-controller="BasicInfoController">
+		 <div class="sidebar_top">
+			 <h1>{{basicInfo.name}}</h1> 
+			 <img src="http://localhost:8080/source/zender/imgs/resume/myself.jpg" alt=""/>
+		 </div>
+		<div class="details">
+			 <h3>联系电话</h3>
+			 <p>{{basicInfo.telephone}}</p>  	 
+			 <h3>电子邮箱</h3>
+			 <p><a href="mailto@example.com">{{basicInfo.email}}</a></p>
+			 <address>
+			 <h3>地址</h3>
+			 <span>{{basicInfo.address}}</span>
+			 </address>
+			 
+		</div>
+		<div class="clearfix"></div>
+</div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	 <div class="content">
+		 <div class="details_header">
+			 <ul>
+				 <li><a href="{{mainUrl}}"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>我的简历</a></li>
+				 <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>联系我</a></li>
+				 <li><a href="{{mapUrl}}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>地图</a></li>
+				 <li><a href="{{downloadUrl}}"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>下载简历</a></li>
+				 <div id="small-dialog" class="mfp-hide">
+					 <img src="" alt=""/>
+				 </div>
+				 
+			 </ul>
+		 </div>
+		 <div class="company contact-grid">
+			 <div title desc="联系我"></div>
+			 <form>	
+					<input type="text" value="主题" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='主题';}">						
+					<textarea cols="77" rows="6" value="说点儿什么吧" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '说点儿什么吧';}">说点儿什么吧</textarea>
+					<div class="send">
+						<input type="submit" value="发送" >
+					</div>
+			 </form>
+			 <div class="map">
+				<iframe src=""></iframe>
+			</div>
+		 </div>
+	 </div>
+</div>
+</body>
+</html>

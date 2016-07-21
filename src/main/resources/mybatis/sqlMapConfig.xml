@@ -8,10 +8,17 @@
     
     <typeAliases>
         <typeAlias type="com.zender.domain.User" alias="User"/>
+        <typeAlias type="com.zender.domain.resume.Employment" alias="Employment"/>
+        <typeAlias type="com.zender.domain.resume.Skill" alias="Skill"/>
+        <typeAlias type="com.zender.domain.resume.Education" alias="Education"/>
     </typeAliases>
     
     <!-- 配置mapper映射文件 -->
     <mappers>
         <mapper resource="com/zender/domain/User.xml"/>
+        <mapper resource="com/zender/domain/PageView.xml"/>
+        <mapper resource="com/zender/domain/resume/Employment.xml"/>
+        <mapper resource="com/zender/domain/resume/Skill.xml"/>
+        <mapper resource="com/zender/domain/resume/Education.xml"/>
     </mappers>
 </configuration>

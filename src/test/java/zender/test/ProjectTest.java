@@ -1,13 +1,19 @@
 package zender.test;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.zender.constants.PageView;
+import com.zender.dao.ResumeDao;
 import com.zender.dao.UserDao;
 import com.zender.domain.User;
+import com.zender.domain.resume.Employment;
+import com.zender.web.util.WebUtils;
 
 public class ProjectTest {
 
@@ -35,10 +41,19 @@ public class ProjectTest {
 	public void testTwo(){
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/applicationContext.xml");
 	    
-		UserDao dao = (UserDao)applicationContext.getBean("userDao");
+		ResumeDao dao = (ResumeDao)applicationContext.getBean("resumeDao");
 	
-	    User user = dao.findUserById(1);
+	    List<Employment> user = dao.findEmploymentByUserId(1);
 	    
-	    System.out.println(user);
+	    System.out.println(user.size());
+	}
+	
+	/**
+	 * 
+	 * */
+	//@Test
+	public void testThree(){
+		System.out.println(WebUtils.getCurrentTime());
+		System.out.println(PageView.RESUME_INDEX.values()[0]);
 	}
 }

@@ -1,18 +1,19 @@
 package com.zender.domain;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.io.Serializable; 
 
 @SuppressWarnings("serial")
 public class User implements Serializable{
 	
 	private int id;
-	private String username;
+	private String name;
+	private String age;
 	private String sex;
-	private Date birthday;
-	private String detail;
+	private String diploma;
+	private String telephone;
+	private String email;
 	private String address;
-	private Float score;
+	private String location;
 	
 	public int getId() {
 		return id;
@@ -20,11 +21,17 @@ public class User implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
 	}
 	public String getSex() {
 		return sex;
@@ -32,17 +39,23 @@ public class User implements Serializable{
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public Date getBirthday() {
-		return birthday;
+	public String getDiploma() {
+		return diploma;
 	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setDiploma(String diploma) {
+		this.diploma = diploma;
 	}
-	public String getDetail() {
-		return detail;
+	public String getTelephone() {
+		return telephone;
 	}
-	public void setDetail(String detail) {
-		this.detail = detail;
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getAddress() {
 		return address;
@@ -50,18 +63,20 @@ public class User implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Float getScore() {
-		return score;
+	public String getLocation() {
+		return location;
 	}
-	public void setScore(Float score) {
-		this.score = score;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", sex=" + sex + ", birthday=" + birthday + ", detail="
-				+ detail + ", address=" + address + ", score=" + score + "]";
+		return "User [id=" + id + ", name=" + name + ", age=" + age + ", sex=" + sex + ", diploma=" + diploma
+				+ ", telephone=" + telephone + ", email=" + email + ", address=" + address + ", location=" + location
+				+ "]";
 	}
+ 
 	
 	
 }

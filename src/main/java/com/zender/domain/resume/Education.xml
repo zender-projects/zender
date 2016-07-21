@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="education">
+ 
+   <resultMap type="Education" id="educationMapper">
+        <id property="id" column="id"/>
+        <result property="school" column="school"/>
+        <result property="major" column="major"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="flag" column="flag"/>
+        <result property="sort" column="sort"/>
+        <result property="updateUser" column="update_user"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="userId" column="user_id"/>
+   </resultMap>
+   <!-- 根据id查询用户 -->
+   <select id="findByUserId" parameterType="int"
+             resultMap="educationMapper">
+        SELECT 
+             id,school,major,start_time,end_time,flag,sort,update_user,update_time,user_id 
+        FROM EDUCATION 
+        WHERE 
+             user_id = #{id}
+        AND  flag = '0' 
+        ORDER BY sort
+   </select>
+   
+</mapper>

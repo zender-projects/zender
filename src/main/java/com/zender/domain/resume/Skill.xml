@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="skill">
+ 
+   <resultMap type="Skill" id="skillMapper">
+        <id property="id" column="id"/>
+        <result property="stype" column="stype"/>
+        <result property="sdesc" column="sdesc"/>
+        <result property="flag" column="flag"/>
+        <result property="sort" column="sort"/>
+        <result property="updateUser" column="update_user"/>
+        <result property="updateTime" column="update_time"/>
+   </resultMap>
+   <!-- 根据id查询用户 -->
+   <select id="findByUserId" parameterType="int"
+             resultMap="skillMapper">
+        SELECT 
+             id,sdesc,sort 
+        FROM SKILLS 
+        WHERE 
+             user_id = #{id}
+        AND flag = '0' 
+        ORDER BY sort
+   </select>
+   
+</mapper>
